@@ -1,0 +1,30 @@
+ATG-Siebel Reference Integration Release Notes / Known Issues
+
+Version 0.5.0.0.0
+
+September 2013
+
+
+
+CONTENTS
+--------
+
+- Introduction
+- Overview
+
+
+INTRODUCTION
+------------
+
+This is the next major release of the ATG-Siebel Reference Integration. The integration is based on the following software and the respective versions
+
+- Oracle Siebel Version 8.1.1.10
+- Oracle ATG Web Commerce 10.1 and 10.2
+
+
+OVERVIEW
+------------
+
+The 0.5.0.0.0 release added the following components to the the Implementation Guide (IG) and Reference Integration(RI) 
+ a. Checkout
+ b. Eligibility & Compatibility  

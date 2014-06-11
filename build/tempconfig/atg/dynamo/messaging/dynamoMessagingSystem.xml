@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<dynamo-message-system>
+  <!-- patch bay definitions -->
+  <patchbay>
+    <message-sink>
+      <nucleus-name>
+      /atg/siebel/account/LoginEventListener
+      </nucleus-name>
+
+      <input-port>
+        <port-name>
+          IndividualEvents
+        </port-name>
+        <input-destination>
+          <provider-name>
+            local
+          </provider-name>
+          <destination-name>
+            localdms:/local/DPSTopic/LoginEvents
+          </destination-name>
+          <destination-type>
+            Topic
+          </destination-type>
+        </input-destination>        
+      </input-port>
+
+    </message-sink>
+    
+      <message-filter>
+      <nucleus-name>
+        /atg/siebel/order/submit/SiebelOrderSourceSink
+      </nucleus-name>
+
+      <input-port>
+        <port-name>
+          DEFAULT
+        </port-name>
+
+        <input-destination>
+          <destination-name>
+            patchbay:/Fulfillment/SubmitOrder
+          </destination-name>
+          <destination-type>
+            Topic
+          </destination-type>
+        </input-destination>
+
+      </input-port>
+
+      <output-port>
+        <port-name>
+          DEFAULT
+        </port-name>
+      </output-port>
+
+      <output-port>
+        <port-name>
+          OrderSubmitPort
+        </port-name>
+        <output-destination>
+          <destination-name>
+            patchbay:/Fulfillment/SubmitOrder
+          </destination-name>
+          <destination-type>
+            Topic
+          </destination-type>
+        </output-destination>
+      </output-port>
+
+    </message-filter>
+  </patchbay>
+</dynamo-message-system>
+<!-- @version $Id: //product/Siebel/version/0.6.0.0.0/config/atg/dynamo/messaging/dynamoMessagingSystem.xml#1 $$Change: 842106 $-->
